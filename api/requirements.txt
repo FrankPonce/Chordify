@@ -1,0 +1,6 @@
+flask
+flask-cors
+tensorflow
+librosa
+numpy
+joblib

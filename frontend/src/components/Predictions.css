@@ -1,0 +1,68 @@
+/* src/components/Predictions.css */
+
+.timeline-container {
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .timeline {
+    position: relative;
+    border-left: 4px solid #ddd;
+    width: 2px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease;
+  }
+  
+  .timeline-item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .timeline-item.slide-in {
+    opacity: 1;
+  }
+  
+  .timeline-item.left {
+    left: -140px;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .timeline-item.right {
+    left: 20px;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .timeline-item.left .timeline-content {
+    background: #dd02ff29;
+  }
+  
+  .timeline-item.right .timeline-content {
+    background: #921b9f5d;
+  }
+  
+  .timeline-time {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 40px;
+    display: inline-block;
+  }
+  
+  .timeline-content {
+    font-size: 1rem;
+    background: #7c1283;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 5px;
+  }
+  

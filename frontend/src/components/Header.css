@@ -1,0 +1,39 @@
+/* src/styles.css */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .button-container button,
+  .button-container label {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, rgba(95,11,171,1) 0%, rgba(198,12,202,1) 100%);
+    box-shadow: 0px 0px 20px rgba(204, 0, 255, 0.27);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .logo {
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 1px;
+    animation: fadeIn 2s ease;
+  }
+  .button-container button:hover,
+  .button-container label:hover {
+    transform: scale(1.05);
+    
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
