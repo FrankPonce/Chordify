@@ -30,7 +30,7 @@ body {
   }
   
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #fff;
     animation: fadeIn 2s ease;
     margin-left: 10rem;
@@ -163,3 +163,34 @@ body {
     }
   }
   
+  
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: rgba(255, 51, 153, 0);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10rem;
+  cursor: pointer;
+  margin: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.toggle-button:hover {
+  transform: scale(1.02);
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); */
+  
+}
+
+/* Adjust the .App class to accommodate horizontal scrolling */
+.App {
+  text-align: center;
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scroll on the main container */
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

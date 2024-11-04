@@ -1,5 +1,6 @@
 /* src/styles.css */
 
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -9,6 +10,7 @@
   
   .button-container button,
   .button-container label {
+    font-family: 'Poppins', sans-serif;
     display: inline-block;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -19,7 +21,8 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    
   }
   .logo {
     max-width: 500px;
@@ -30,10 +33,16 @@
   .button-container button:hover,
   .button-container label:hover {
     transform: scale(1.05);
+    background: linear-gradient(45deg, rgba(95,11,171,1) 0%, rgba(141,11,185,1) 25%, rgba(198,12,202,1) 100%);
+    
     
   }
   
   input[type="file"] {
     display: none;
   }
-  
+  .selected-file {
+    color: #ffffff8a;
+    margin-top: 10px;
+    font-size: 1rem;
+  }

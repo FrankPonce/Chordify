@@ -1,68 +1,91 @@
 /* src/components/Predictions.css */
 
 .timeline-container {
-    padding: 20px;
-    margin-top: 50px;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .timeline {
-    position: relative;
-    border-left: 4px solid #ddd;
-    width: 2px;
-    margin: 0 auto;
-    animation: fadeIn 2s ease;
-  }
-  
-  .timeline-item {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  .timeline-item.slide-in {
-    opacity: 1;
-  }
-  
+  padding: 20px;
+  margin-top: 50px;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  border-left: 4px solid #dddddd9e;
+  width: 1px;
+  margin: 0 auto;
+  height: 100%; /* Allow the timeline to grow based on content */
+  min-height: 500px; /* Minimum height to prevent squishing */
+  animation: fadeIn 2s ease;
+}
+
+.timeline-item {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  cursor: pointer;
+  width: 200px;
+}
+
+.timeline-item.slide-in {
+  opacity: 1;
+}
+
+.timeline-item.left {
+  left: -220px;
+  transform: translateX(-20px);
+}
+
+.timeline-item.right {
+  left: 20px;
+  transform: translateX(20px);
+}
+
+.timeline-item.left .timeline-content {
+  background: #dd02ff29;
+}
+
+.timeline-item.right .timeline-content {
+  background: #921b9f5d;
+}
+
+.timeline-time {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-align: center;
+  width: 80px;
+  display: inline-block;
+}
+
+.timeline-content {
+  font-size: 1rem;
+  background: #7c1283;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.timeline-item:hover .timeline-content {
+  background-color: #ff3399;
+}
+
+@media screen and (max-width: 768px) {
   .timeline-item.left {
-    left: -140px;
-    transform: translateX(-20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    left: -180px;
   }
-  
   .timeline-item.right {
-    left: 20px;
-    transform: translateX(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    left: 10px;
   }
-  
-  .timeline-item.left .timeline-content {
-    background: #dd02ff29;
-  }
-  
-  .timeline-item.right .timeline-content {
-    background: #921b9f5d;
-  }
-  
   .timeline-time {
-    font-size: 0.9rem;
-    color: #bbb;
-    margin-right: 10px;
-    margin-top: 10px;
-    text-align: center;
-    width: 40px;
-    display: inline-block;
+    width: 70px;
   }
-  
-  .timeline-content {
-    font-size: 1rem;
-    background: #7c1283;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 10px;
-    display: inline-block;
-    margin: 5px;
-  }
-  
+}
+
+/* Animation for timeline items */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

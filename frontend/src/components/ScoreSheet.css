@@ -1,0 +1,36 @@
+/* src/components/ScoreSheet.css */
+
+#score-sheet-container {
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+}
+
+#score-sheet {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    white-space: normal;
+}
+
+#score-sheet svg {
+    background-color: transparent;
+}
+
+#score-sheet path,
+#score-sheet line,
+#score-sheet rect,
+#score-sheet circle,
+#score-sheet polyline,
+#score-sheet polygon,
+#score-sheet ellipse,
+#score-sheet text {
+    fill: white;
+    stroke: white;
+}

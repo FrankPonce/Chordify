@@ -3,10 +3,10 @@
 import os
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
+import librosa
+from feature_extraction import extract_features, augment_audio
 
 def load_data(data_dir):
-    import librosa
-
     train_file_paths = []
     train_labels = []
     test_file_paths = []
@@ -35,18 +35,30 @@ def load_data(data_dir):
     return train_file_paths, train_labels, test_file_paths, test_labels
 
 def preprocess_data(train_file_paths, train_labels, test_file_paths, test_labels):
-    from feature_extraction import extract_features
-
     # Process Training data
     train_features_list = []
-    for file in train_file_paths:
-        features = extract_features(file)
+    augmented_features_list = []
+    augmented_labels = []
+    for file, label in zip(train_file_paths, train_labels):
+        y, sr = librosa.load(file, sr=22050)
+        features = extract_features(y, sr)
         train_features_list.append(features)
+
+        # Data augmentation
+        y_augmented = augment_audio(y, sr)
+        augmented_features = extract_features(y_augmented, sr)
+        augmented_features_list.append(augmented_features)
+        augmented_labels.append(label)
+
+    # Combine original and augmented features
+    train_features_list.extend(augmented_features_list)
+    train_labels.extend(augmented_labels)  # Duplicate labels for augmented data
 
     # Process Test data
     test_features_list = []
     for file in test_file_paths:
-        features = extract_features(file)
+        y, sr = librosa.load(file, sr=22050)
+        features = extract_features(y, sr)
         test_features_list.append(features)
 
     # Encode labels

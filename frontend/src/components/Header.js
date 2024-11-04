@@ -3,7 +3,7 @@
 import React from 'react';
 import './Header.css';
 
-function Header({ onFileChange, onPredict }) {
+function Header({ onFileChange, onPredict, selectedFile }) {
   return (
     <div className="header">
       <img src="/chordify.png" alt="Chordify.ai Logo" className="logo" />
@@ -21,6 +21,9 @@ function Header({ onFileChange, onPredict }) {
         />
         <button onClick={onPredict}>PREDICT</button>
       </div>
+      {selectedFile && (
+        <p className="selected-file">Selected File: {selectedFile.name}</p>
+      )}
     </div>
   );
 }
