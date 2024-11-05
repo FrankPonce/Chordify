@@ -4,3 +4,6 @@ tensorflow
 librosa
 numpy
 joblib
+soundfile
+scikit-learn
+

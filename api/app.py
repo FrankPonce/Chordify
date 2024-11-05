@@ -21,6 +21,7 @@ from model.feature_extraction import extract_features_from_audio
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+
 # Load the trained model, label encoder, and scaler
 model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model', 'guitar_note_model.h5'))
 encoder_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model', 'label_encoder.joblib'))
@@ -139,4 +140,4 @@ def segment_chords(y_normalized, sr):
     return segments, timestamps
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
