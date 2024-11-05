@@ -27,7 +27,7 @@ Chordify uses machine learning algorithms to recognize guitar chords from audio 
 
 ## 🎬 Showcase
 
-![Chordify Showcase GIF](path/to/your-showcase.gif)  
+<img src='./showcase.gif'>
 *Example of chord detection and display in action.*
 
 ---
