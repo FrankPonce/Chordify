@@ -30,7 +30,7 @@ function UploadForm() {
     setError(null);
     setPredictions([]);
 
-    axios.post('http://localhost:5000/predict', formData)
+    axios.post('https://chordify-backend.onrender.com/predict', formData)
       .then(response => {
         setPredictions(response.data.predictions);
         setLoading(false);
